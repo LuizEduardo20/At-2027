@@ -1,0 +1,165 @@
+:root {
+  --bg: #fff8f3;
+  --card: #ffffff;
+  --text: #4a3b3b;
+  --accent: #e8788a;
+  --accent-dark: #c9566b;
+  --soft: #fde4e8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: linear-gradient(160deg, var(--soft), var(--bg));
+}
+
+.hero__small { letter-spacing: 2px; text-transform: uppercase; font-size: .85rem; color: var(--accent-dark); }
+
+.hero__title {
+  font-family: "Caveat", cursive;
+  font-size: clamp(3rem, 12vw, 6rem);
+  color: var(--accent-dark);
+  line-height: 1.1;
+  margin: 8px 0;
+  animation: fadeUp 1s ease both;
+}
+
+.hero__sub { font-size: 1.2rem; margin-bottom: 28px; animation: fadeUp 1s .3s ease both; }
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform .2s, background .2s;
+  animation: fadeUp 1s .6s ease both;
+}
+.btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 72px 24px;
+  text-align: center;
+}
+
+.section h2 {
+  font-family: "Caveat", cursive;
+  font-size: 2.4rem;
+  color: var(--accent-dark);
+  margin-bottom: 24px;
+}
+
+.section__hint { margin-top: -12px; margin-bottom: 24px; font-size: .95rem; opacity: .75; }
+
+#abra-quando.visible h2 {
+  animation: textAppear .7s ease both;
+}
+
+#abra-quando.visible .section__hint {
+  animation: textAppearHint .7s ease .2s both;
+}
+
+.letter {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: left;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+}
+.letter p + p { margin-top: 14px; }
+.signature { font-family: "Caveat", cursive; font-size: 1.8rem; color: var(--accent-dark); text-align: right; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px 18px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+  transition: transform .25s;
+}
+.card:hover { transform: translateY(-6px); }
+.card__emoji { font-size: 2.4rem; }
+.card h3 { margin: 8px 0 4px; }
+
+.envelopes { display: grid; gap: 14px; }
+
+.envelope {
+  background: var(--card);
+  border: 2px dashed var(--accent);
+  border-radius: 14px;
+  padding: 16px 20px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  transition: background .2s;
+}
+.envelope:hover { background: var(--soft); }
+.envelope__title { font-weight: 700; color: var(--accent-dark); }
+.envelope__msg {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .5s ease, opacity .5s ease, margin .3s;
+}
+.envelope.open .envelope__msg { max-height: 200px; opacity: 1; margin-top: 10px; }
+.envelope.open { border-style: solid; background: var(--soft); }
+.envelope__msg.appear {
+  animation: textAppear .55s ease both;
+}
+
+.countdown__grid { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.countdown__grid div {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px 22px;
+  min-width: 92px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+}
+.countdown__grid strong { display: block; font-size: 2.2rem; color: var(--accent-dark); }
+.countdown__msg { margin-top: 20px; font-size: 1.1rem; }
+
+.footer { text-align: center; padding: 32px 24px 48px; font-size: .9rem; opacity: .75; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textAppear {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textAppearHint {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: .75; transform: translateY(0); }
+}
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}

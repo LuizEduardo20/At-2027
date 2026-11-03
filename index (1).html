@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Até 2027 ♥</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <p class="hero__small">Para alguem especial!</p>
+    <h1 class="hero__title">Ludmila</h1>
+    <p class="hero__sub">Boas férias! A gente se vê em 2027 ♥</p>
+    <a href="#carta" class="btn">Despedida</a>
+  </header>
+
+  <main>
+
+    <section id="carta" class="section reveal">
+      <h2>Uma cartinha pra você</h2>
+      <div class="letter">
+        <p>Eae, Ludmila!</p>
+        <p>Suas férias estão chegando e eu não podia deixar você ir sem te falar umas coisas. Trabalhar do seu lado deixou tudo mais leve, e eu já sei que vou sentir sua falta.</p>
+        <p>Aproveite cada dia, descanse bastante, viaje e volte com muitas histórias. Eu entro de férias no mês que vem, mas prometo: quando a gente se reencontrar no ano que vem, vamos conversar bastante!</p>
+        <p class="signature">Com Amor, Luiz</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2>Momentos que eu levo comigo</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="card__emoji">🌙</span>
+          <h3>As conversas antes de dormir</h3>
+          <p>Aqueles papos que iam até tarde, mesmo sendo tarde e com o sono já batendo e o raciocínio indo embora.</p>
+        </article>
+        <article class="card">
+          <span class="card__emoji">✨</span>
+          <h3>Camera lenta</h3>
+          <p>Os momentos em que eu só observava e admirava como você ia fazer as coisas sem precisar dizer nada. fora a aparência que dispensa comentários!!</p>
+        </article>
+        <article class="card">
+          <span class="card__emoji">🤝</span>
+          <h3>O apoio</h3>
+          <p>Todas as vezes que você estava lá quando eu precisei. mesmo sem tocar no asssunto, já sentia um alivio.</p>
+        </article>
+      </div>
+    </section>
+    
+    <section class="section reveal" id="abra-quando">
+      <h2>Abra quando...</h2>
+      <p class="section__hint">Abrir cada mensagem durante as férias</p>
+      <div class="envelopes" id="envelopes"></div>
+    </section>
+
+    <section class="section reveal countdown">
+      <h2>Faltam para o nosso reencontro</h2>
+      <div class="countdown__grid" id="countdown">
+        <div><strong id="dias">0</strong><span>dias</span></div>
+        <div><strong id="horas">0</strong><span>horas</span></div>
+        <div><strong id="min">0</strong><span>min</span></div>
+      </div>
+      <p class="countdown__msg" id="countdownMsg"></p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
